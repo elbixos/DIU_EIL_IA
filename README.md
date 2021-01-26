@@ -1,6 +1,8 @@
-## DIU EIL : Intelligence Artificielle : Apprentissage automatique
+## Formation pour L'académie de Guadeloupe : Intelligence Artificielle : Apprentissage automatique
 
 Sur cette page, je ne met que les ressources nécessaires pour le cours...
+
+### Niveau 1
 
 - [lien vers le cours](https://elbixos.github.io/L3_IA/Cours/99_sommaire.html)
 
@@ -16,3 +18,9 @@ Quelques fichiers pour tester du code :
 
 
 J'ajouterais des choses au besoin...
+
+### Niveau 2
+
+Ca va sans doute changer, mais pour le moment, le support serait celui ci :
+
+- [Lien vers le cours d'IA 2](https://elbixos.github.io/M2_Connectionnisme/)
