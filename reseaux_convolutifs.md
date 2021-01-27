@@ -203,7 +203,31 @@ L'extraction des caractéristiques analysées par le réseau sera donc induit pa
 les données et l'objectif du réseau. C'est la raison principale du succès des
 CNN dans de nombreuses applications (notamment en traitement d'images)
 
-### Vers une extraction de caractéristiques plus sémantiques...
+#### Quelques considérations sur les taille en entrée et sortie des couches.
+
+Ceci n'est pas majeur, mais amène a bien comprendre les architectures de
+couches.
+
+Imaginons qu'une couche travaille sur des données en entrée de taille :
+
+100 (hauteur) x 200 (largeur) x 10 (nb de map)
+
+Si ma couche est constituée comme suit :
+- 15 maps calculées
+- des noyaux (filtres) de taille 3x3
+- pas (stride) de 1
+- pas de padding
+
+
+Alors les données en sortie ont pour dimensions :
+98 (hauteur) x 198 (largeur) x 15 (nb de map)
+
+On peut également calculer son nombre de paramètres libres :
+chaque map de la couche voit 3x3x10 pixels d'entrées, et un biais
+Pour chaque map de la couche, j'ai donc 91 paramètres.
+Pour l'ensemble de la couche, j'ai donc 91x15 paramètres -> 1365 paramètres.
+
+#### Vers une extraction de caractéristiques plus sémantiques...
 
 Si l'on observe le fonctionnement d'un CNN a plusieurs couches, on peut
 maintenant avoir l'intuition suivante :
@@ -230,3 +254,38 @@ finales pour qu'il devienne rapidement efficace dans la reconnaissance de
 visages. C'est ce que l'on appelle **Transfert Learning**)
 
 ### Les couches de pooling (sous echantillonage)
+
+Dans un CNN, on a souvent une alternance d'une couche de convolution suivie
+d'une couche de **pooling**. Voyons comment cela fonctionne avant d'en
+comprendre l'intérêt.
+Pour cela, prenons l'exemple de données 2D (une image).
+
+Une couche de pooling a une taille donnée (souvent 2x2).
+Une fois encore, on va se déplacer dans les données d'entrées, souvent avec un
+pas de 2 (pour un poling de 2x2).
+
+Dans le cas du **max pooling**, on regarde donc des blocs de 2x2 pixels, et on
+ne conserve, sur chaque map d'entrée, que la valeur max des ces 4 pixels.
+On a donc résumé l'information de ces 4 pixels en un seul. On réduit ainsi
+la taille des données à traiter par les couches suivantes de façon drastique.
+Il faut noter qu'on perd aussi de la précision sur la localisation de
+l'information.
+
+Ce qui semble être un désavantage est en fait intéressant, car la position
+précise des caractéristique est moins importante que leurs positions relatives.
+(par exemple, je n'ai pas besoin de savoir précisément ou sont les oreilles dans
+un visage, mais c'est important de savoir qu'elles ne sont pas loin des yeux).
+Ceci nous amènera a un peu de robustesse face au problème de l'invariance en
+translation.
+
+Si une couche de pooling 2x2 a pour entrée des données de taille :
+
+100 (largeur) x 200 (hauteur) x 10 (nombre de map),
+
+sa sortie aura une taille :
+
+50 (largeur) x 100 (hauteur) x 10 (nombre de map)
+
+Notons qu'il existe aussi des couches de **average pooling** qui donne en sortie
+la valeur moyenne sur les 2x2 pixels de chaque map. Les calculs précédents sur
+les tailles restent valables dans ce cas...
