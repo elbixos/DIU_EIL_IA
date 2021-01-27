@@ -3,9 +3,9 @@
 ### Limites des réseaux "standards"
 
 
-Les réseaux de neurones "standard" et **denses** ont d'indéniables qualités,
+Les réseaux de neurones "standard" (**denses**) ont d'indéniables qualités,
 nous permettant d'effectuer aisément et efficacement de la **classification**
-ou de la **régression** sur des données dont les **caractéristiques sont
+ou de la **régression** sur des données dont les **caractéristiques** sont
 *hétérogènes*.
 Par exemple, si les données en entrée sont celle de la base des vins, où chaque
 vin est caractérisé par une acidité, un ph... c'est vers ce type de réseau qu'il
