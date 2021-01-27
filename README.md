@@ -21,6 +21,6 @@ J'ajouterais des choses au besoin...
 
 ### Niveau 2
 
-Ca va sans doute changer, mais pour le moment, le support serait celui ci :
+La première partie du cours va concerner les Réseaux de Neurones Convolutifs. Cette partie est accessible dans [cette page](reseaux_convolutifs.md)
 
-- [Lien vers le cours d'IA 2](https://elbixos.github.io/M2_Connectionnisme/)
+Si j'ai du temps, je vous montrerais d'autres choses, par exemple ce qu'on trouve la dedans : [Lien vers le cours d'IA 2](https://elbixos.github.io/M2_Connectionnisme/)
