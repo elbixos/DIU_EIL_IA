@@ -289,3 +289,37 @@ sa sortie aura une taille :
 Notons qu'il existe aussi des couches de **average pooling** qui donne en sortie
 la valeur moyenne sur les 2x2 pixels de chaque map. Les calculs précédents sur
 les tailles restent valables dans ce cas...
+
+### Les couches finales
+
+De fait, ces alternances de couches conv / pooling servent à extraire
+l'information des données. Il manque la partie prise de décision
+(classification ou régression).
+Pour cela, il nous faudra une couche de sortie. Cette couche de sortie sera
+"standard" (dense). Pour rappel, elle sera de taille 1 le plus souvent pour une
+régression, ou ayant le même nombre de neurones que le nombre de classes pour
+une classification.
+
+Le problème est que ces couches denses travaillent sur des vecteurs 1D.
+Or nos données sont, dans le cas d'images, des matrices 2D.
+Il faudra donc une couche opérant la transformation.
+
+Pour cela, 2 possibilités :
+- une couche d'applatissement (**flatten**). Elle prendra en entrée une image de,
+disons 100 (hauteur) x 200 (largeur) x 10 (nb map) et aura en sortie un
+vecteur de taille 200x100x10 (hauteur x largeur x nb map).
+
+- la seconde possibilité est de mettre une couche de **general pooling** (max ou
+average). Celle ci fait un pooling sur chaque map. Pour notre entrée de
+100 (hauteur) x 200 (largeur) x 10 (nb map). Elle aura en sortie un
+vecteur de taille 10 (nb map).
+
+### Architecture globale
+
+Voici un exemple d'architecture complete de CNN avec une couche flatten avant la sortie :
+
+![architecture complete](architecture_complete.png)
+
+### Premiers essais
+
+A faire
