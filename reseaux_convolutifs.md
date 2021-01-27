@@ -150,7 +150,7 @@ filtre éventuellement 2D, comme dans l'image suivante :
 
 ou animé :
 
-![convolution 2D bis](conv2D_animated.png)
+![convolution 2D bis](conv2D_animated.gif)
 
 #### Remarques sur la convolution
 
