@@ -322,4 +322,15 @@ Voici un exemple d'architecture complete de CNN avec une couche flatten avant la
 
 ### Premiers essais
 
-A faire
+Attaquons nous à un problème classique de classification : reconnaitre dans
+des images, celles qui contiennent des chats et celles qui contiennent des
+chiens.
+
+C'est clairement un probleme de classifications à deux classes (chats, chien).
+Ce sont des images, on se tournera plutot vers des CNN
+
+Le code sera développé sur colab, un environnement hebergé par Google permettant
+de faire tourner du code Python à distance.
+
+Voici le lien vers mon fichier colab, que vous pourrez executer (si vous avez
+un compte gmail...) : [catsVsDog Colab](https://colab.research.google.com/drive/1TinPW0s8vW5mYh_Dqr45Ep9WUoRdzcgF?usp=sharing)
