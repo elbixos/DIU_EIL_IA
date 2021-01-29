@@ -23,4 +23,7 @@ J'ajouterais des choses au besoin...
 
 La première partie du cours va concerner les Réseaux de Neurones Convolutifs. Cette partie est accessible dans [cette page](reseaux_convolutifs.md)
 
+Une idée supplémentaire concernerait le **Transfert Learning**. Ceci est abordé
+par l'exemple dans ce [fichier executable](https://colab.research.google.com/drive/1HS7i9bJuQqoKrlIUBmSd52Tvd6PjZELO?usp=sharing)
+
 Si j'ai du temps, je vous montrerais d'autres choses, par exemple ce qu'on trouve la dedans : [Lien vers le cours d'IA 2](https://elbixos.github.io/M2_Connectionnisme/)
